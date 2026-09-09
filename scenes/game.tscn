@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cs8h5hpdy5ew7" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bk7jyumf2ah2i" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dn0w2xwxja5ur" path="res://scenes/killzones.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://ckhf3mibtnf5m" path="res://scenes/slime.tscn" id="6_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -279,3 +280,6 @@ position = Vector2(466, 164)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2" unique_id=647863943]
 libraries/ = SubResource("AnimationLibrary_iywne")
 autoplay = &"move"
+
+[node name="Slime" parent="." unique_id=842452461 instance=ExtResource("6_p57ef")]
+position = Vector2(628, 193)
