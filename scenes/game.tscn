@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bbw5iep8qanpr"]
 
+[ext_resource type="Script" uid="uid://cgx5g00pllgav" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://b0pgxlhvkwxy7" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cgfbqec7r8nw8" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cs8h5hpdy5ew7" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bk7jyumf2ah2i" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dn0w2xwxja5ur" path="res://scenes/killzones.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://ckhf3mibtnf5m" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://bc4ah8cx733ko" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -217,6 +219,20 @@ _data = {
 
 [node name="Game" type="Node2D" unique_id=1251762568]
 
+[node name="GameManager" type="Node" parent="." unique_id=124014093]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
+[node name="ScoreLabel" type="Label" parent="GameManager" unique_id=256421067]
+offset_left = 476.0
+offset_top = -40.0
+offset_right = 612.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0.02745098, 0.16470589, 0.35686275, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "You collected x coins!"
+
 [node name="TileMap" type="TileMap" parent="." unique_id=914784027]
 position = Vector2(20, 0)
 tile_set = SubResource("TileSet_yaick")
@@ -283,3 +299,25 @@ autoplay = &"move"
 
 [node name="Slime" parent="." unique_id=842452461 instance=ExtResource("6_p57ef")]
 position = Vector2(628, 193)
+
+[node name="Labels" type="Node" parent="." unique_id=4868121]
+
+[node name="Label" type="Label" parent="Labels" unique_id=1023527464]
+offset_left = -68.0
+offset_top = 175.0
+offset_right = 22.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.02745098, 0.16470589, 0.35686275, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump"
+
+[node name="Label2" type="Label" parent="Labels" unique_id=373864109]
+offset_left = 473.0
+offset_top = 133.0
+offset_right = 563.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0.02745098, 0.16470589, 0.35686275, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Don't fall!!!"
